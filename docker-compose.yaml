@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  artilheiros:
+    build: .
+    volumes:
+      - "./artilheiros:/usr/src/app"
+    command: python3 artilheiros.py
+    ports:
+      - "5001:5000"
+  
+  proximas_partidas:
+    build: .
+    volumes:
+      - "./proximas_partidas:/usr/src/app"
+    command: python3 proximas_partidas.py
+    ports:
+      - "5002:5000"
+  
+  resultados:
+    build: .
+    volumes:
+      - "./resultados:/usr/src/app"
+    command: python3 resultados.py
+    ports:
+      - "5003:5000"
